@@ -1,0 +1,2 @@
+OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total
+6,Ada Me,KY,6.00,Laminate,767.00,1.75,2.10,1342.25,1610.70,177.18,3130.13

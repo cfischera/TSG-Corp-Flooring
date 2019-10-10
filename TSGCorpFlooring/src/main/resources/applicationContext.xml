@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="userIO" class="com.tsg.fischer.flooring.view.ConsoleUserIO"/>
+
+    <bean id="view" class="com.tsg.fischer.flooring.view.View">
+        <constructor-arg ref="userIO"/>
+    </bean>
+
+    <bean id="orderData" class="com.tsg.fischer.flooring.dao.FileOrderData"/>
+
+    <bean id="productData" class="com.tsg.fischer.flooring.dao.FileProductData"/>
+
+    <bean id="stateTaxData" class="com.tsg.fischer.flooring.dao.FileStateTaxData"/>
+
+    <bean id="modeData" class="com.tsg.fischer.flooring.dao.FileModeData"/>
+
+    <bean id="service" class="com.tsg.fischer.flooring.controller.ServiceLayerImpl">
+        <constructor-arg ref="orderData"/>
+        <constructor-arg ref="productData"/>
+        <constructor-arg ref="stateTaxData"/>
+        <constructor-arg ref="modeData"/>
+    </bean>
+
+
+    <bean id="controller" class="com.tsg.fischer.flooring.controller.Controller">
+        <constructor-arg ref="service"/>
+        <constructor-arg ref="view"/>
+    </bean>
+</beans>

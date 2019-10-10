@@ -1,0 +1,5 @@
+StateAbbreviation,StateName,TaxRate
+CA,Calfornia,25.00
+KY,Kentucky,6.00
+TX,Texas,4.45
+WA,Washington,9.25
